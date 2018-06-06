@@ -1,0 +1,6 @@
+
+<% @jobs.each do |job| %>
+    <% cache job do %>
+        <%= render 'job', job: job %>
+    <% end %>
+<% end %>
