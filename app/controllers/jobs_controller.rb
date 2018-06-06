@@ -1,18 +1,13 @@
 class JobsController < ApplicationController
     def index
-        n = 100
+        n = 10
         n.times do
             Delayed::Job.create!(handler: Delayed::Job.count + rand(n))
         end
 
-        offset = rand(Delayed::Job.count - n)
-        if offset > n
-            offset -= n
-        elsif offset < 0
-            offset = 0
-        end
-        
-        @jobs = Delayed::Job.offset(offset).take(n)
+        offset = Delayed::Job.count - n - n/2
+        offset = 0 if offset < 0
+        @jobs = Delayed::Job.offset(offset).take(n*10)
 
         return render 'index'
     end
