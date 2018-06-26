@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  # database: db/production.sqlite3
   database: ":memory:"
 

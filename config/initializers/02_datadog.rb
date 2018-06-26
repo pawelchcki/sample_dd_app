@@ -1,6 +1,7 @@
 if defined?(Datadog)
     Datadog.configure do |d|
         d.use :rails
+        d.use :resque, workers: [TestJob]
     end
 
     require 'ddtrace/version'
