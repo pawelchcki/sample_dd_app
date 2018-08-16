@@ -6,7 +6,7 @@ Rails.application.config.after_initialize do
     end
     puts "populating db"
 
-    #10_000.times do |i|
-    #    Delayed::Job.create!(handler: i)
-    #end
+    1_000.times do |i|
+       Delayed::Job.create!(handler: i)
+    end
 end

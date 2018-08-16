@@ -14,11 +14,13 @@ gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'uglifier', '>= 1.3.0'
 gem 'stackprof', group: :development
-
+gem 'ruby-prof'
 gem 'resque'
 
 gem 'listen'
-gem 'ddtrace' , path: '../../dd-trace-rb'
+gem 'ddtrace', '= 0.14.0'
+# gem 'ddtrace', '>= 0.14.0.beta2'
+#gem 'ddtrace' , path: '../../dd-trace-rb'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
